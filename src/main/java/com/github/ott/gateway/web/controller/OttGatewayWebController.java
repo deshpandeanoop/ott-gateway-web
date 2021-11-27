@@ -14,4 +14,10 @@ public class OttGatewayWebController {
     public String homePage() {
         return "homepage";
     }
+
+    @CrossOrigin
+    @GetMapping("/register")
+    public String register() {
+        return "add-ott-details";
+    }
 }

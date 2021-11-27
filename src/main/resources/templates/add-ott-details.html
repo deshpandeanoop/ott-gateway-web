@@ -1,0 +1,55 @@
+<html>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<link href="/css/add-ott-details.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="/js/add-ott-details.js"></script>
+
+<div class="container text-center text-white">
+    <div class="row pt-5">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4">Add OTT Details</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-7 mx-auto">
+            <div class="card rounded-0 border-0 shadow">
+                <div class="card-body p-5">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Platform</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Password</th>
+                                <th scope="col"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><input class="form-control rounded-0" type="text" name="platform" placeholder="Platform"></td>
+                                <td><input class="form-control rounded-0" type="text" name="username" placeholder="Username"></td>
+                                <td><input class="form-control rounded-0" type="password" name="password" placeholder="Password"></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- Add rows button-->
+                    <a class="btn btn-primary rounded-0 btn-block" id="insertRow" href="#">Add new row</a>
+                    <br/><br/>
+                    <div align="center">
+                        <button type="button" class="btn btn-success">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
