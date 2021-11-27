@@ -1,4 +1,4 @@
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link href="/css/homepage.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,16 +21,21 @@
     <div class="white-panel">
         <div class="login-show">
             <h2>LOGIN</h2>
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="button" value="Login">
+            <form id="login-form-id" action="#" th:action="@{/login}" th:object="${loginRequest}" method="post">
+                <input type="text" placeholder="Email" th:field="*{username}">
+                <input type="password" placeholder="Password" th:field="*{password}">
+                <input type="button" value="Login" onclick="$('#login-form-id').submit();">
+            </form>
         </div>
         <div class="register-show">
             <h2>REGISTER</h2>
-            <input type="text" placeholder="Email">
-            <input type="password" placeholder="Password">
-            <input type="password" placeholder="Confirm Password">
-            <input type="button" value="Register">
+            <form id="registration-form-id" action="#" th:action="@{/register}" th:object="${registerRequest}" method="post">
+                <input type="text" placeholder="First Name" th:field="*{firstName}">
+                <input type="text" placeholder="Last Name" th:field="*{lastName}">
+                <input type="text" placeholder="Username" th:field="*{username}">
+                <input type="password" placeholder="Password" th:field="*{password}">
+                <input type="button" value="Register" onclick="$('#registration-form-id').submit();">
+            </form>
         </div>
     </div>
 </div>

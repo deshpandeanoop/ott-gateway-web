@@ -1,9 +1,15 @@
 package com.github.ott.gateway.web.controller;
 
+import com.github.ott.gateway.web.model.AddOttAccDetailsRequest;
+import com.github.ott.gateway.web.model.LogInRequest;
+import com.github.ott.gateway.web.model.OttAccDetails;
+import com.github.ott.gateway.web.model.RegisterRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RequestMapping("/")
 @Controller
@@ -11,13 +17,31 @@ public class OttGatewayWebController {
 
     @CrossOrigin
     @GetMapping("/home")
-    public String homePage() {
+    public String homePage(Model model) {
+        model.addAttribute("loginRequest", new LogInRequest());
+        model.addAttribute("registerRequest", new RegisterRequest());
         return "homepage";
     }
 
     @CrossOrigin
-    @GetMapping("/register")
-    public String register() {
+    @PostMapping("/register")
+    public String register(@ModelAttribute RegisterRequest registerRequest, Model model)
+    {
+        AddOttAccDetailsRequest addOttAccDetailsRequest = new AddOttAccDetailsRequest();
+        addOttAccDetailsRequest.getOttAccDetails().add(new OttAccDetails());
+        model.addAttribute("form", addOttAccDetailsRequest);
         return "add-ott-details";
+    }
+
+    @CrossOrigin
+    @PostMapping("/login")
+    public String login(@ModelAttribute LogInRequest logInRequest) {
+        return "";
+    }
+
+    @CrossOrigin
+    @PostMapping("/ottAccounts")
+    public String addOttDetails(@ModelAttribute AddOttAccDetailsRequest addOttAccDetailsRequest) {
+        return "";
     }
 }
