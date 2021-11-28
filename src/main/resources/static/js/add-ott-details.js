@@ -1,7 +1,11 @@
+$(document).ready(function() {
+   sessionStorage.setItem("ottPlatformUserId", $('#userId').val());
+});
+
 $(function () {
 
     // Start counting from the third row
-    var counter = 2;
+    var counter = 1;
 
     $("#insertRow").on("click", function (event) {
         event.preventDefault();
@@ -11,9 +15,9 @@ $(function () {
 
         // Table columns
         cols += '<th scrope="row">' + counter + '</th>';
-        cols += '<td><input class="form-control rounded-0" type="text" name="platform" placeholder="Platform"></td>';
-        cols += '<td><input class="form-control rounded-0" type="text" name="username" placeholder="Username"></td>';
-        cols += '<td><input class="form-control rounded-0" type="password" name="password" placeholder="Password"></td>';
+        cols += '<td><input class="form-control rounded-0" type="text" name="ottAccDetails['+counter+'].platform" placeholder="Platform" ></td>';
+        cols += '<td><input class="form-control rounded-0" type="text" name="ottAccDetails['+counter+'].username" placeholder="Username"></td>';
+        cols += '<td><input class="form-control rounded-0" type="password" name="ottAccDetails['+counter+'].password" placeholder="Password"></td>';
         cols += '<td><button class="btn btn-danger rounded-0" id ="deleteRow"><i class="fa fa-trash"></i></button</td>';
 
         // Insert the columns inside a row

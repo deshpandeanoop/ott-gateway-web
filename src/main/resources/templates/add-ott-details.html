@@ -34,13 +34,14 @@
                                 <tbody>
                                 <tr th:each="ottAcc, itemStat : *{ottAccDetails}">
                                     <th scope="row">1</th>
-                                    <td><input th:field="*{ottAccDetails[__${itemStat.index}__].platform}" class="form-control rounded-0" type="text" name="platform" placeholder="Platform" ></td>
-                                    <td><input th:field="*{ottAccDetails[__${itemStat.index}__].username}" class="form-control rounded-0" type="text" name="username" placeholder="Username"></td>
-                                    <td><input  th:field="*{ottAccDetails[__${itemStat.index}__].password}" class="form-control rounded-0" type="password" name="password" placeholder="Password"></td>
+                                    <td><input th:field="*{ottAccDetails[__${itemStat.index}__].platform}" class="form-control rounded-0" type="text" placeholder="Platform" ></td>
+                                    <td><input th:field="*{ottAccDetails[__${itemStat.index}__].username}" class="form-control rounded-0" type="text" placeholder="Username"></td>
+                                    <td><input th:field="*{ottAccDetails[__${itemStat.index}__].password}" class="form-control rounded-0" type="password" placeholder="Password"></td>
                                     <td></td>
                                 </tr>
                                 </tbody>
                             </table>
+                            <input type="hidden" id="userId" name="gatewayUserId" th:attr="value=${userId}"/>
                         </form>
                     </div>
                     <!-- Add rows button-->

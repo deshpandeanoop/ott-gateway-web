@@ -9,5 +9,4 @@ public class OttGatewayWebApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OttGatewayWebApplication.class, args);
 	}
-
 }
