@@ -3,6 +3,7 @@
 <link href="/css/display-ott-details.css" rel="stylesheet">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="/js/display-ott-details.js"></script>
 <div class="container-fluid bg-gradient p-5" id="parent-div-id">
     <div class="row m-auto text-center w-75">
         <div class="col-4 princing-item red" th:if="${hasAmazonPrimeDetails}">
@@ -20,7 +21,7 @@
                </svg>
             </div>
             <div class="card-body bg-white mt-0 shadow">
-                <button type="button" class="btn btn-lg btn-block  btn-custom ">Launch</button>
+                <button type="button" class="btn btn-lg btn-block  btn-custom " onclick="launchOttPlatform('AMAZON_PRIME');">Launch</button>
             </div>
         </div>
         <div class="col-4 princing-item blue" th:if="${hasNetflixDetails}">
@@ -38,7 +39,7 @@
                </svg>
             </div>
             <div class="card-body bg-white mt-0 shadow">
-                <button type="button" class="btn btn-lg btn-block  btn-custom ">Launch</button>
+                <button type="button" class="btn btn-lg btn-block  btn-custom " onclick="launchOttPlatform('NETFLIX');">Launch</button>
             </div>
         </div>
         <div class="col-4 princing-item green" th:if="${hasHotstarDetails}">
@@ -56,7 +57,7 @@
                </svg>
             </div>
             <div class="card-body bg-white mt-0 shadow">
-                <button type="button" class="btn btn-lg btn-block  btn-custom ">Launch</button>
+                <button type="button" class="btn btn-lg btn-block  btn-custom " onclick="launchOttPlatform('HOTSTAR');">Launch</button>
             </div>
         </div>
     </div>
