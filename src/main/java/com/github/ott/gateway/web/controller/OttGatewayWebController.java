@@ -48,7 +48,7 @@ public class OttGatewayWebController {
     @CrossOrigin
     @GetMapping("/login")
     public String login(@ModelAttribute LogInRequest logInRequest) {
-        return "display-ott-details";
+        return "redirect:/display-ott-details";
     }
 
     @CrossOrigin
